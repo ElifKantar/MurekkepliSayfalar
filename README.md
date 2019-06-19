@@ -1,0 +1,2 @@
+# BookShop
+Kodluyoruz DotNetCore Project
