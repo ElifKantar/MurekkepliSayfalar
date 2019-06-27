@@ -24,9 +24,10 @@ var deps = {
     "bootstrap": {
         "dist/**/*": ""
     },
-    "@fortawesome/fontawesome-free-webfonts": {
+    "font-awesome": {
         "**/*": ""
-    }
+    },
+
 };
 
 gulp.task("clean", function (cb) {
