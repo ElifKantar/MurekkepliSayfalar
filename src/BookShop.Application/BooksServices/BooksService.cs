@@ -38,14 +38,22 @@ namespace BookShop.Application.BooksServices
             return newBook;
         }
 
-        public Task<Books> Update(UpdateBook input)
+        public async Task<Books> Update(UpdateBook input)
         {
-            throw new NotImplementedException();
+            var updateBook = await Get(input.Id);
+            updateBook.Name = input.Name;
+            updateBook.Author = input.Author;
+            updateBook.Description = input.Description;
+            _context.Books.Update(updateBook);
+            await _context.SaveChangesAsync();
+            return updateBook;
         }
 
-        public Task Delete(int id)
+        public async Task Delete(int id)
         {
-            throw new NotImplementedException();
+            var item = await Get(id);
+            _context.Books.Remove(item);
+            await _context.SaveChangesAsync();
         }
 
        
