@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BookShop.Application.BooksServices
 {
-    public interface IBookService
+    public interface IBooksService
     {
         Task<Books> Get(int id);
         Task<List<Books>> GetAll();

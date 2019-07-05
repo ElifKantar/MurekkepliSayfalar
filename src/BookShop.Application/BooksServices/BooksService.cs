@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BookShop.Application.BooksServices
 {
-    public class BooksService : IBookService
+    public class BooksService : IBooksService
     {
         private ApplicationUserDbContext _context;
         public BooksService(ApplicationUserDbContext context)

@@ -16,7 +16,6 @@ namespace BookShop.EntityFramework.Contexts
 
         public DbSet<Books> Books { get; set; }
         public DbSet<BookList> BookLists { get; set; }
-        public DbSet<BookListItem> BookListItems { get; set; }
 
     }
 }
