@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BookShop.Web.UI.Controllers
 {
+
     [Authorize]
 
     public class BooksController : Controller

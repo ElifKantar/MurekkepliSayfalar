@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BookShop.Application.BookListServices;
+using BookShop.Application.BooksServices;
 using BookShop.Core.Users;
 using BookShop.EntityFramework.Contexts;
 using Microsoft.AspNetCore.Builder;
@@ -45,7 +47,13 @@ namespace BookShop.Web.UI
                 options.Password.RequiredUniqueChars = 1;
             });
 
-            services.AddDefaultIdentity<ApplicationUser>().AddEntityFrameworkStores<ApplicationUserDbContext>();
+            // services.AddDefaultIdentity<ApplicationUser>().AddEntityFrameworkStores<ApplicationUserDbContext>();
+
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+         .AddEntityFrameworkStores<ApplicationUserDbContext>();
+
+            services.AddScoped<IBooksService, BooksService>();
+            services.AddScoped<IBookListService, BookListService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
